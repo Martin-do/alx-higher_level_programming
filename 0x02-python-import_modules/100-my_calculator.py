@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 if __name__ == '__main__':
-    from sys import argv, exit 
+    from sys import argv, exit
     from calculator_1 import add, sub, mul, div
 
     arg_count = len(argv) - 1
