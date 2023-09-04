@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-
+    """ a Rectangle class """
     def __init__(self, width=0, height=0):
         """__init__ method.
         Args:
@@ -54,12 +54,3 @@ class Rectangle:
         if height < 0:
             raise ValueError("height must be >= 0")
         self.__height = height
-
-
-if __name__ == '__main__':
-    my_rectangle = Rectangle(2, 4)
-    print(my_rectangle.__dict__)
-
-    my_rectangle.width = 10
-    my_rectangle.height = 3
-    print(my_rectangle.__dict__)
