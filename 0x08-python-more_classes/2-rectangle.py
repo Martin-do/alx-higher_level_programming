@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-
+    """ A Rectangle class """
     def __init__(self, width=0, height=0):
         """__init__ method.
         Args:
