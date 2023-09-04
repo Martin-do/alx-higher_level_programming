@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-
+    """A Rectangle class"""
     def __init__(self, width=0, height=0):
         """__init__ method.
         Args:
@@ -77,7 +77,7 @@ class Rectangle:
         string = ""
         if self.__width == 0 or self.__height == 0:
             return string
-        for i in range(self.__height):
+        for i in range(self.__height - 1):
             for j in range(self.__width):
                 string += "#"
             string += "\n"
@@ -86,7 +86,7 @@ class Rectangle:
 
     def __repr__(self):
         """String representation of a rectangle object"""
-        return ("Rectangle ({:d}, {:d})".format(self.width, self.height))
+        return ("Rectangle({:d}, {:d})".format(self.width, self.height))
 
     def __del__(self):
         """Outputs a message when a rectangle instance is deleted"""
