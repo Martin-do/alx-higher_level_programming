@@ -5,6 +5,7 @@
     attribute is called first_name
 """
 
+
 class LockedClass:
     """A lockedClass object preventing dynamic creation
     of attributes other than "first_name"
