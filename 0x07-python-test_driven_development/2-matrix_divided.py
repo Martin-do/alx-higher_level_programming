@@ -17,24 +17,29 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     if matrix is None:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (\
+                list of lists) of integers/floats")
     elif len(matrix) == 0:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (\
+                list of lists) of integers/floats")
     elif len(matrix[0]) == 0:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (\
+                list of lists) of integers/floats")
     else:
         rows = len(matrix)
         columns = len(matrix[0])
         for r in range(rows):
             if len(matrix[r]) != columns:
-                raise TypeError("Each row of the matrix must have the same size")
+                raise TypeError("Each row of the matrix must\
+                        have the same size")
 
         new_matrix = [[0 for i in range(columns)] for j in range(rows)]
         for r in range(rows):
             for c in range(columns):
                 n = matrix[r][c]
                 if not isinstance(n, int) and not isinstance(n, float):
-                    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                    raise TypeError("matrix must be a matrix (\
+                            list of lists) of integers/floats")
                 else:
                     new_matrix[r][c] = float("%0.2f" % (n / div))
 
