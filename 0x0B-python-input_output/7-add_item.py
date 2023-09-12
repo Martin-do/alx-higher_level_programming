@@ -11,6 +11,7 @@ load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
 
 def main():
+    """this is the main driver functin"""
     f_name = "add_items.json"
     args = len(sys.argv)
 
