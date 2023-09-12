@@ -1,18 +1,10 @@
 #!/usr/bin/python3
+"""
+Contains the read_file function
+"""
 
 
 def read_file(filename=""):
-    """function that reads txt files and prints
-    them out to stdout
-
-    Args:
-        filename (str, optional): the filename to be
-        read and printed. Defaults to "".
-    """
-    with open(filename, 'r', encoding="UTF-8") as f:
-        read_data = f.read()
-    print(read_data)
-
-
-if __name__ == '__main__':
-    read_file("my_file_0.txt")
+    """""reads a text file(UTF8) and prints it to stdout"""
+    with open(filename, "r", encoding="utf-8") as f:
+        print(f.read(), end="")
