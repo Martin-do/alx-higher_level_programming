@@ -2,7 +2,6 @@
 """Define a Rectangle class"""
 from models.base import Base
 
-
 class Rectangle(Base):
     """A Rectangle class
 
@@ -23,7 +22,12 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        super.__init__(id)
+        super().__init__(id)
+
+    def __str__(self):
+        """Returns a particular string representation"""
+        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.x, self.y, self.width, self.height)
 
     @property
     def width(self):
@@ -41,11 +45,6 @@ class Rectangle(Base):
             TypeError: raised if value is not an integer
             ValueError: raised if value is less than 0
         """
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.x = value
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -72,11 +71,6 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.x = value
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
         self.__height = value
 
     @property
@@ -86,7 +80,7 @@ class Rectangle(Base):
         Returns:
             int: the x coord
         """
-        return self.x
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -101,9 +95,9 @@ class Rectangle(Base):
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("width must be > 0")
-        self.x = value
+        self.__x = value
 
     @property
     def y(self):
@@ -112,7 +106,7 @@ class Rectangle(Base):
         Returns:
             int: the x coord
         """
-        return self.y
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -127,10 +121,10 @@ class Rectangle(Base):
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("width must be > 0")
-        self.y = value
-
+        self.__y = value
+        
     def area(self):
         """calculates the area of the rectangle
 
@@ -138,19 +132,7 @@ class Rectangle(Base):
             int: rectangle area
         """
         return self.width * self.height
-
-    def display(self):
-        """prints representation of rectangle"""
-        for i in range(self.height):
-            for j in range(self.width):
-                print("#", end="")
-            print("")
-
-    def __str__(self):
-        """Returns a particular string representation"""
-        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(
-                self.id, self.x, self.y, self.width, self.height)
-
+    
     def display(self):
         """prints representation of rectangle"""
         for y in range(self.y):
