@@ -90,8 +90,7 @@ class Base:
         try:
             with open(filename, "r") as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
-                for dt in list_dicts:
-                    return [cls.create(**dt)]
+                return [cls.create(**dt) for dt in list_dicts]
         except IOError:
             return []
 
