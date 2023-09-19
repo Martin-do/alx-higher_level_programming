@@ -2,6 +2,7 @@
 """Define a Rectangle class"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """A Rectangle class
 
@@ -124,7 +125,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("width must be > 0")
         self.__y = value
-        
+
     def area(self):
         """calculates the area of the rectangle
 
@@ -132,7 +133,7 @@ class Rectangle(Base):
             int: rectangle area
         """
         return self.width * self.height
-    
+ 
     def display(self):
         """prints representation of rectangle"""
         for y in range(self.y):
