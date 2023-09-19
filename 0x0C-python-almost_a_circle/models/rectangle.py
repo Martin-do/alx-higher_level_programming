@@ -133,7 +133,7 @@ class Rectangle(Base):
             int: rectangle area
         """
         return self.width * self.height
- 
+
     def display(self):
         """prints representation of rectangle"""
         for y in range(self.y):
