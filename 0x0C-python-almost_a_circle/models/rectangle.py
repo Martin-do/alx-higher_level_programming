@@ -2,7 +2,6 @@
 """Define a Rectangle class"""
 from models.base import Base
 
-
 class Rectangle(Base):
     """A Rectangle class
 
@@ -69,9 +68,9 @@ class Rectangle(Base):
             ValueError: raised if value is less than 0
         """
         if type(value) != int:
-            raise TypeError("width must be an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("width must be > 0")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -95,9 +94,9 @@ class Rectangle(Base):
             ValueError: raised if value is less than 0
         """
         if type(value) != int:
-            raise TypeError("width must be an integer")
+            raise TypeError("x must be an integer")
         if value < 0:
-            raise ValueError("width must be > 0")
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -121,11 +120,11 @@ class Rectangle(Base):
             ValueError: raised if value is less than 0
         """
         if type(value) != int:
-            raise TypeError("width must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
-            raise ValueError("width must be > 0")
+            raise ValueError("y must be >= 0")
         self.__y = value
-
+        
     def area(self):
         """calculates the area of the rectangle
 
@@ -133,7 +132,7 @@ class Rectangle(Base):
             int: rectangle area
         """
         return self.width * self.height
-
+    
     def display(self):
         """prints representation of rectangle"""
         for y in range(self.y):
@@ -145,7 +144,7 @@ class Rectangle(Base):
             print("")
 
     def update(self, *args, **kwargs):
-        """method that assigs argument to each attribute
+        """method that assigns argument to each attribute
         Args:
             *args (ints): New attribute values.
                 - 1st argument represents id attribute
