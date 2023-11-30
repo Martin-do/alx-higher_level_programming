@@ -1,32 +1,34 @@
 #!/usr/bin/python3
 """Function to find the peak in
-	a list of numbers"""
+    a list of list_of_integers"""
 
 
 def find_peak(list_of_integers):
     """finds the peak in a list of integers
 
-	Args:
-		list_of_integers (list): list of integers
+    Args:
+        list_of_integers (list): list of integers
 
-	Returns:
-		(int): highest number
-	"""
-    if not list_of_integers or len(list_of_integers) == 1:
+    Returns:
+        (int): highest number
+    """
+    if list_of_integers == []:
         return None
 
-    left = 0
-    right = len(list_of_integers) - 1
+    length = len(list_of_integers)
+    m = int(length / 2)
+    li = list_of_integers
 
-    while left <= right:
-        mid = left + (right - left) // 2
+    if m - 1 < 0 and m + 1 >= length:
+        return li[m]
+    elif m - 1 < 0:
+        return li[m] if li[m] > li[m + 1] else li[m + 1]
+    elif m + 1 >= length:
+        return li[m] if li[m] > li[m - 1] else li[m - 1]
 
-        # Check if the peak is to the left or right of the middle element
-        if mid > 0 and list_of_integers[mid] > list_of_integers[mid - 1]:
-            right = mid - 1
-        elif mid < len(list_of_integers) - 1 and list_of_integers[mid] < list_of_integers[mid + 1]:
-            left = mid + 1
-        else:
-            return mid
+    if li[m - 1] < li[m] > li[m + 1]:
+        return li[m]
 
-    return None
+    if li[m + 1] > li[m - 1]:
+        return find_peak(li[m:])
+    return find_peak(li[:m])
