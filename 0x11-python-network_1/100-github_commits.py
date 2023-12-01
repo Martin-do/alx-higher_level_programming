@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """script that takes 2 arguments in order to solve this challenge.
-Please list 10 commits (from the most recent to oldest) of the repository “rails” by the user “rails”
+Please list 10 commits (from the most recent to oldest)
+of the repository “rails” by the user “rails”
 You must use the GitHub API"""
 import requests
 import sys
